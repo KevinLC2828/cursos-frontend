@@ -1,9 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
+import { Curso } from '../../app';
 
 @Component({
-  imports: [],
   selector: 'app-lista-cursos',
-  styleUrl: './lista-cursos.css',
+  imports: [NgFor, NgIf],
   templateUrl: './lista-cursos.html',
+  styleUrl: './lista-cursos.css',
 })
-export class ListaCursos {}
+export class ListaCursos {
+  @Input() cursos: Curso[] = [];
+  @Output() eliminar = new EventEmitter<number>();
+
+  onEliminar(id: number) {
+    this.eliminar.emit(id);
+  }
+}

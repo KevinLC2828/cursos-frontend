@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-pie-pagina',
-  styleUrl: './pie-pagina.css',
   templateUrl: './pie-pagina.html',
+  styleUrl: './pie-pagina.css',
 })
-export class PiePagina {}
+export class PiePagina {
+  anio = new Date().getFullYear();
+  texto = 'Universidad de Guayaquil - Desarrollo de Aplicaciones Web Avanzado';
+}

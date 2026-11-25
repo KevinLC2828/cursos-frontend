@@ -1,1 +1,25 @@
-<p>formulario-curso works!</p>
+<h2 class="h4 mb-3">Registrar curso</h2>
+
+<div *ngIf="mostrarError" class="alert alert-danger">
+  Completa el nombre y el docente.
+</div>
+
+<div class="mb-3">
+  <label class="form-label">Nombre del curso</label>
+  <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre" />
+</div>
+
+<div class="mb-3">
+  <label class="form-label">Docente</label>
+  <input type="text" class="form-control" [(ngModel)]="docente" name="docente" />
+</div>
+
+<div class="mb-3">
+  <label class="form-label">Estado</label>
+  <select class="form-select" [(ngModel)]="activo" name="activo">
+    <option [ngValue]="true">Activo</option>
+    <option [ngValue]="false">Inactivo</option>
+  </select>
+</div>
+
+<button class="btn btn-primary w-100" (click)="guardar()">Agregar curso</button>

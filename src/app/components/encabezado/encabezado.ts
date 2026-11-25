@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-encabezado',
-  styleUrl: './encabezado.css',
   templateUrl: './encabezado.html',
+  styleUrl: './encabezado.css',
 })
-export class Encabezado {}
+export class Encabezado {
+  titulo = 'Sistema de Gestión de Cursos';
+  subtitulo = 'Desarrollo de Aplicaciones Web Avanzado - Proyecto Primer Parcial';
+}
